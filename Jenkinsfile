@@ -47,7 +47,7 @@ pipeline {
 						dockerImage = docker.build("in28min/currency-exchange-devops:${env.BUILD_TAG}")
 					}
 				}
-			sge('Push Docker Image') {
+			stage('Push Docker Image') {
 				steps {
 					script {
 						docker.withRegistry('', 'dockerhub'){
